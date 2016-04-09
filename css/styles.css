@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+div.title {
+  width: 100%;
+  background-color: #000;
+}
+
+div.title div.wrapper {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+div.title div.wrapper:before {
+  content: "";
+  display: block;
+  float: left;
+  height: 75px;
+  width: 75px;
+  background: url("../images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+div.title div.wrapper .uname {
+  display: block;
+  width: 75%;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 18px;
+}
+
+div.title div.wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
