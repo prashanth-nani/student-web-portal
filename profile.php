@@ -27,13 +27,25 @@ else{
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><?php  echo $name.'\'s Profile'?></title>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="en">
 
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      <?php  echo $name.'\'s Profile'?>
+    </title>
+    <link rel="stylesheet" href="css/styles.css"></link>
+  </head>
+
+  <body>
+    <div class="title">
+      <div class="wrapper">
+        <div class="uname">
+          <h1>Hogwarts University</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>

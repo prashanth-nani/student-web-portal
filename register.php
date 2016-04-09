@@ -20,10 +20,10 @@
     Degree:
     <select name="degree" required>
       <option value="btech">B.Tech</option>
-      <option value="mtech">M.Tech</option>
+      <!-- <option value="mtech">M.Tech</option>
       <option value="phd">PhD</option>
       <option value="mba">MBA</option>
-      <option value="mca">MCA</option>
+      <option value="mca">MCA</option> -->
     </select>
     <br>
     Branch:
