@@ -64,7 +64,7 @@
     <br>
     <input type="password" name="password2" placeholder="Retype password" required/>
     <br>
-    <input type="file" name="image" id="image" required><br>
+    <input type="file" name="image" id="image"><br>
     <input type="submit" name="register" value="Register!">
   </form>
 
@@ -114,29 +114,30 @@
         $regresult2 = mysqli_query($con, $regquery2);
 
         //Image handling
-        // $file_name = $_FILES['image']['name'];
-        $file_size =$_FILES['image']['size'];
-        $file_tmp =$_FILES['image']['tmp_name'];
-        $file_type=$_FILES['image']['type'];
-        $tmp = explode('.',$_FILES['image']['name']);
-        $file_ext=strtolower(end($tmp));
-        $file_name=$regno.'.'.$file_ext;
-        $expensions= array("jpeg","jpg","png");
+        if(isset($_FILES['image'])){
+          $file_size =$_FILES['image']['size'];
+          $file_tmp =$_FILES['image']['tmp_name'];
+          $file_type=$_FILES['image']['type'];
+          $tmp = explode('.',$_FILES['image']['name']);
+          $file_ext=strtolower(end($tmp));
+          $file_name=$regno.'.'.$file_ext;
+          $expensions= array("jpeg","jpg","png");
 
-         if(in_array($file_ext,$expensions)=== false){
-            $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-         }
+           if(in_array($file_ext,$expensions)=== false){
+              $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+           }
 
-         if($file_size > 2048000){
-            $errors[]='File size must be less than 200KB';
-         }
+           if($file_size > 2048000){
+              $errors[]='File size must be less than 200KB';
+           }
 
-         if(empty($errors)==true){
-            move_uploaded_file($file_tmp,"images/uploads/".$file_name);
-         }else{
-            print_r($errors);
-            die();
-         }
+           if(empty($errors)==true){
+             move_uploaded_file($file_tmp,"images/uploads/".$file_name);
+           }else{
+              print_r($errors);
+              die();
+           }
+       }
 
         if($regresult2 == 1){
           $_SESSION['regno']=$regno;
