@@ -53,9 +53,3 @@ div.bodyout div.title div.wrapper #uname #titlebox #title {
   display: table-cell;
   vertical-align: middle;
 }
-
-div.bodyout div.container div#profile {
-  height: 100px;
-  width: 100px;
-  margin: 0 auto;
-}

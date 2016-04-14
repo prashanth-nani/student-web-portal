@@ -10,32 +10,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/register.css" media="screen" title="no title" charset="utf-8">
   <title>Registration</title>
 </head>
 <body>
-  <form action="register.php" method="post">
+  <div class="bodyout">
+    <div class="title">
+      <div class="wrapper">
+        <div id="uname">
+          <div id="titlebox">
+            <h1 id="title">Hogwarts University</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <form action="register.php" method="post" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Full Name" required/>
     <br>
     <input type="email" name="email" placeholder="Email" required><br>
     Degree:
     <select name="degree" required>
-      <option value="btech">B.Tech</option>
-      <!-- <option value="mtech">M.Tech</option>
-      <option value="phd">PhD</option>
-      <option value="mba">MBA</option>
-      <option value="mca">MCA</option> -->
+      <?php
+        require('dbconnect.php');
+        $degquery = 'SELECT degree, dname FROM degree';
+        $degresult = mysqli_query($con, $degquery);
+        while($degree = mysqli_fetch_array($degresult)){
+          echo '<option value="'.$degree['degree'].'">'.$degree['dname'].'</option>';
+        }
+      ?>
     </select>
     <br>
     Branch:
     <select name="branch" required>
-      <option value="cse">CSE</option>
-      <option value="it">IT</option>
-      <option value="ece">ECE</option>
-      <option value="ee">EE</option>
-      <option value="ce">CE</option>
-      <option value="me">ME</option>
-      <option value="che">CHE</option>
-      <option value="pie">PIE</option>
+      <?php
+        $brquery = 'SELECT dcode, dname FROM department';
+        $brresult = mysqli_query($con, $brquery);
+        while($branch = mysqli_fetch_array($brresult)){
+          echo '<option value="'.$branch['dcode'].'">'.$branch['dname'].'</option>'."\n";
+        }
+      ?>
     </select>
     <br>
     Date of Birth:
@@ -49,6 +64,7 @@
     <br>
     <input type="password" name="password2" placeholder="Retype password" required/>
     <br>
+    <input type="file" name="image" id="image" required><br>
     <input type="submit" name="register" value="Register!">
   </form>
 
@@ -96,8 +112,33 @@
       $regresult = mysqli_query($con, $regquery);
       if($regresult == 1){
         $regresult2 = mysqli_query($con, $regquery2);
+
+        //Image handling
+        // $file_name = $_FILES['image']['name'];
+        $file_size =$_FILES['image']['size'];
+        $file_tmp =$_FILES['image']['tmp_name'];
+        $file_type=$_FILES['image']['type'];
+        $tmp = explode('.',$_FILES['image']['name']);
+        $file_ext=strtolower(end($tmp));
+        $file_name=$regno.'.'.$file_ext;
+        $expensions= array("jpeg","jpg","png");
+
+         if(in_array($file_ext,$expensions)=== false){
+            $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+         }
+
+         if($file_size > 2048000){
+            $errors[]='File size must be less than 200KB';
+         }
+
+         if(empty($errors)==true){
+            move_uploaded_file($file_tmp,"images/uploads/".$file_name);
+         }else{
+            print_r($errors);
+            die();
+         }
+
         if($regresult2 == 1){
-          // session_start();
           $_SESSION['regno']=$regno;
           echo "
           <script type=\"text/javascript\">
@@ -107,7 +148,12 @@
           ";
         }
       }
+    }else{
+      if(isset($_POST['submit'])){
+      echo "Error occured!";
+    }
     }
   ?>
+</div>
 </body>
 </html>

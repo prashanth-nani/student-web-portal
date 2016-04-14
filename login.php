@@ -38,7 +38,6 @@
           header("location:profile.php");
         }else{
           echo "Incorrect password!<br>";
-          echo $encpass;
         }
       }
       else{

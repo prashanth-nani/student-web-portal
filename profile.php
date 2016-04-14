@@ -39,13 +39,24 @@ else{
   </head>
 
   <body>
-    <div class="title">
-      <div class="wrapper">
-        <div class="uname">
-          <h1>Hogwarts University</h1>
+    <div class="bodyout">
+      <div class="title">
+        <div class="wrapper">
+          <div id="uname">
+            <div id="titlebox">
+              <h1 id="title">Hogwarts University</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="profile">
+          <img src="<?php echo 'images/uploads/'.$regno.'.jpg' ?>" alt="">
         </div>
       </div>
     </div>
+
   </body>
 
   </html>
