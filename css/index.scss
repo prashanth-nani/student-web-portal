@@ -1,0 +1,118 @@
+$bp1: 835px; // $hor-nav-min: 725px;
+$hor-nav-min: 0;
+$nav-item-font-size: 20px;
+$nav-bar-ul-padding-tb: 15px; //Nav bar padding top, bottom
+$nav-bar-ul-padding-lr: 0; // Nav bar padding left, right
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+div.bodyout {
+  // background: #96dead;
+  div.title {
+    width: 100%;
+    background-color: #000;
+    padding: 10px 0;
+    div.wrapper {
+      width: 68%;
+      margin: 0 auto;
+      &:before {
+        content: "";
+        display: inline-block;
+        height: 75px;
+        width: 75px;
+        background: url("../images/logo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+      #uname {
+        height: 75px;
+        width: calc(100% - 231px);
+        display: inline-block;
+        color: #FFF;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 20px;
+        text-align: center;
+        vertical-align: middle;
+        #titlebox {
+          height: 100%;
+          width: 100%;
+          display: table;
+          #title {
+            display: table-cell;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  div.nav-bar {
+    width: 100%;
+    background-color: #181717;
+    position: fixed;
+    ul {
+      width: 60%; //Rem
+      width: 95%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px $nav-bar-ul-padding-lr $nav-bar-ul-padding-tb;
+      li {
+        list-style: none;
+        text-align: center;
+        font-family: "BebasNeue Regular", sans-serif;
+        letter-spacing: 3px;
+        font-weight: 700;
+        font-size: $nav-item-font-size;
+        @media screen and (max-width: $bp1) {
+          font-size: 20px;
+          display: block;
+          margin-bottom: 10px;
+          padding-right: 0;
+        }
+        position: relative;
+        padding-right: 110px;
+        display: inline-block;
+        transition: bottom 0.5s ease;
+        @media screen and (min-width: $bp1) {
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+        a {
+          text-decoration: none;
+          // color: #E25D33;
+          // color: #FFF;
+          color: #C8CED0;
+          position: relative;
+          padding: 10px;
+          @media screen and (min-width: $bp1) {
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              height: 3px;
+              width: 0;
+              // background-color: #F95C2C;
+              // background-color: #E25D33;
+              // background-color: #FFF;
+              background-color: #C8CED0;
+              transition: width 0.5s;
+            }
+            &:hover:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

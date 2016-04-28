@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 div.bodyout {
-  // background: #96dead;
   div.title {
     width: 100%;
     background-color: #000;
@@ -48,60 +47,41 @@ div.bodyout {
       }
     }
   }
-  .regform {
-    position: relative;
-    top: 15px;
-    width: 30%;
-    padding: 2%;
-    margin: 0 auto;
-    .formtitle {
-      width: 20%;
-      margin: 0 auto 10px;
-    }
-    form {
-      input {
-        //height: 40px;
-        border: 1px solid #bab5c1;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 3px;
-        width: 100%;
-      }
-      input:focus{
-        border: 2px solid #499898;
-      }
-      select {
-        margin-bottom: 10px;
-        padding: 5px;
-        width: 100%;
-      }
-      .formlabel {
-        width: 100%;
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-      .formspan {
-        width: inherit;
-        margin-right: 3px;
-      }
-      .genderlabel{
 
-      }
-      #registerbutton{
-        width: 55%;
-        margin: 0 75px;
-      }
-      #errormsg{
-        color: #FF0000;
-        width: 100%;
-        text-align: center;
-        visibility: hidden;
-      }
-      #loginpage{
-        width: 100%;
-        text-align: center;
-      }
+  #loginform{
+    box-sizing: content-box;
+    border: 1px solid #bab5c1;
+    padding: 20px;
+    width: 22%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 5px;
+    top: 150px;
+    input {
+      //height: 40px;
+      border: 1px solid #bab5c1;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      width: 100%;
     }
+    input:focus{
+      border: 2px solid #499898;
+    }
+    #loginbutton{
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 15px;
+    }
+    a#reglink{
+      display: block;
+      width: 50%;
+      margin: 0 auto 15px;
+    }
+  }
+  #errormsg{
+    width: 55%;
+    margin: 0 auto;
   }
 }

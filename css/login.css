@@ -54,20 +54,18 @@ div.bodyout div.title div.wrapper #uname #titlebox #title {
   vertical-align: middle;
 }
 
-div.bodyout .regform {
-  position: relative;
-  top: 15px;
-  width: 30%;
-  padding: 2%;
+div.bodyout #loginform {
+  box-sizing: content-box;
+  border: 1px solid #bab5c1;
+  padding: 20px;
+  width: 22%;
   margin: 0 auto;
+  position: relative;
+  border-radius: 5px;
+  top: 150px;
 }
 
-div.bodyout .regform .formtitle {
-  width: 20%;
-  margin: 0 auto 10px;
-}
-
-div.bodyout .regform form input {
+div.bodyout #loginform input {
   border: 1px solid #bab5c1;
   padding: 10px;
   margin-bottom: 10px;
@@ -75,41 +73,24 @@ div.bodyout .regform form input {
   width: 100%;
 }
 
-div.bodyout .regform form input:focus {
+div.bodyout #loginform input:focus {
   border: 2px solid #499898;
 }
 
-div.bodyout .regform form select {
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-}
-
-div.bodyout .regform form .formlabel {
-  width: 100%;
+div.bodyout #loginform #loginbutton {
+  width: 60%;
+  margin: 0 auto;
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-div.bodyout .regform form .formspan {
-  width: inherit;
-  margin-right: 3px;
+div.bodyout #loginform a#reglink {
+  display: block;
+  width: 50%;
+  margin: 0 auto 15px;
 }
 
-div.bodyout .regform form #registerbutton {
+div.bodyout #errormsg {
   width: 55%;
-  margin: 0 75px;
-}
-
-div.bodyout .regform form #errormsg {
-  color: #FF0000;
-  width: 100%;
-  text-align: center;
-  visibility: hidden;
-}
-
-div.bodyout .regform form #loginpage {
-  width: 100%;
-  text-align: center;
+  margin: 0 auto;
 }

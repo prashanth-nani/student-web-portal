@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+div.bodyout div.title {
+  width: 100%;
+  background-color: #000;
+  padding: 10px 0;
+}
+
+div.bodyout div.title div.wrapper {
+  width: 68%;
+  margin: 0 auto;
+}
+
+div.bodyout div.title div.wrapper:before {
+  content: "";
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  background: url("../images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+div.bodyout div.title div.wrapper #uname {
+  height: 75px;
+  width: calc(100% - 231px);
+  display: inline-block;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.bodyout div.title div.wrapper #uname #titlebox {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+div.bodyout div.title div.wrapper #uname #titlebox #title {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+div.bodyout div.nav-bar {
+  width: 100%;
+  background-color: #181717;
+  position: fixed;
+}
+
+div.bodyout div.nav-bar ul {
+  width: 60%;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 15px;
+}
+
+div.bodyout div.nav-bar ul li {
+  list-style: none;
+  text-align: center;
+  font-family: "BebasNeue Regular", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+  padding-right: 110px;
+  display: inline-block;
+  transition: bottom 0.5s ease;
+}
+
+@media screen and (max-width: 835px) {
+  div.bodyout div.nav-bar ul li {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 835px) {
+  div.bodyout div.nav-bar ul li:last-child {
+    padding-right: 0;
+  }
+}
+
+div.bodyout div.nav-bar ul li a {
+  text-decoration: none;
+  color: #C8CED0;
+  position: relative;
+  padding: 10px;
+}
+
+@media screen and (min-width: 835px) {
+  div.bodyout div.nav-bar ul li a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: #C8CED0;
+    transition: width 0.5s;
+  }
+  div.bodyout div.nav-bar ul li a:hover:after {
+    width: 100%;
+  }
+}

@@ -11,12 +11,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
+  <link rel="stylesheet" href="css/login.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
+  <div class="bodyout">
+    <div class="title">
+      <div class="wrapper">
+        <div id="uname">
+          <div id="titlebox">
+            <h1 id="title">Hogwarts University</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+<div id="loginform">
   <form action="login.php" method="post">
     <input type="text" name="regno" placeholder="Registration No.">
     <input type="password" name="password" placeholder="password">
-    <input type="submit" name="login" value="Login">
+    <input type="submit" name="login" value="Login" id="loginbutton">
+    <a href="register.php" id="reglink">Not yet registered?</a>
   </form>
 
   <?php
@@ -48,9 +61,11 @@
     else{
       // if(!empty($_POST)){ //May not work when checkboxes without name are present in the form
       if($_SERVER['REQUEST_METHOD']=='POST'){
-        echo "Please fill in all the fields";
+        echo "<div id='errormsg'>Please fill in all the fields</div>";
       }
     }
    ?>
+   </div>
+ </div>
 </body>
 </html>

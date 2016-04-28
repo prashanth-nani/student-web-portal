@@ -54,8 +54,104 @@ div.bodyout div.title div.wrapper #uname #titlebox #title {
   vertical-align: middle;
 }
 
+div.bodyout #logout button {
+  border: 1px solid #908886;
+  padding: 5px 15px;
+  position: relative;
+  left: 90%;
+  top: -8px;
+  border-radius: 5px;
+  background-color: #636061;
+}
+
+div.bodyout #logout button a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+div.bodyout #Results input {
+  border: 1px solid #908886;
+  padding: 5px 15px;
+  position: relative;
+  left: 80%;
+  top: 20px;
+  border-radius: 5px;
+  background-color: #636061;
+  font-size: 15px;
+  color: #FFF;
+}
+
 div.bodyout div.container div#profile {
   height: 100px;
   width: 100px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+div.bodyout div.container div#profile img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div.bodyout div.container div.details {
+  width: 50%;
+  margin: 0 auto;
+}
+
+div.bodyout div.container div.details #editbutton {
+  width: 400px;
+  margin: 0 auto;
+}
+
+div.bodyout div.container div.details #editbutton input {
+  width: 20%;
+  position: relative;
+  left: 80%;
+  font-size: 15px;
+  padding: 3px 10px;
+  background: #54585e;
+  color: #FFF;
+  border: 1px solid #859a92;
+  border-radius: 3px;
+}
+
+div.bodyout div.container div.details table {
+  table-layout: fixed;
+  width: 400px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+div.bodyout div.container div.details table tr td {
+  border-bottom: 1px solid #000;
+  height: 60px;
+  width: 200px;
+}
+
+div.bodyout div.container div.details table tr td .ucase {
+  text-transform: uppercase;
+}
+
+div.bodyout div.container div.details table tr td #updatebtn {
+  visibility: hidden;
+  border: 1px solid #94909e;
+  padding: 2px 4px;
+  float: right;
+}
+
+div.bodyout div.container div.details table tr td select {
+  border: 0px;
+  outline: 0px;
+  background: #FFF;
+}
+
+div.bodyout div.container div.details table tr td label {
+  font-weight: bold;
+  text-align: justify;
+}
+
+div.bodyout div.container div.details table tr td input {
+  border: none;
+  background: #FFF;
 }
